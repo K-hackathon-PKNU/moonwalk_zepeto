@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: dd494536f92d740c0b33157f5945dff2
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass AttachPetController extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            this._localCharacter = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;\r\n           
+    const localCharacter = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;\r\n           
+    const animator = localCharacter.ZepetoAnimator;\r\n            const bone = animator.GetBoneTransform(this.bodyBond);\r\n           
+    this._btn.onClick.AddListener(() => {\r\n                this.Pet.localScale
+    = new UnityEngine_1.Vector3(3, 3, 3);\r\n                UnityEngine_1.Object.Instantiate(this.Pet,
+    bone);\r\n                this.StartCoroutine(this.WaitForExit());\r\n               
+    this._localCharacter.SetGesture(this.animationClip);\r\n            });\r\n       
+    });\r\n    }\r\n    *WaitForExit() {\r\n        if (this._localCharacter) {\r\n           
+    while (true) {\r\n                if (this._localCharacter.tryJump) {\r\n                   
+    this._localCharacter.CancelGesture();\r\n                    break;\r\n               
+    }\r\n                yield new UnityEngine_1.WaitForEndOfFrame();\r\n           
+    }\r\n        }\r\n    }\r\n}\r\nexports.default = AttachPetController;\r\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQXR0YWNoUGV0Q29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkF0dGFjaFBldENvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBZ0k7QUFFaEksNkVBQXFHO0FBQ3JHLGlEQUFxRDtBQUlyRCxNQUFxQixtQkFBb0IsU0FBUSxxQ0FBcUI7SUFTbEUsS0FBSztRQUNELDJDQUFhLENBQUMsUUFBUSxDQUFDLGtCQUFrQixDQUFDLFdBQVcsQ0FBQyxHQUFHLEVBQUU7WUFDdkQsSUFBSSxDQUFDLGVBQWUsR0FBRywyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUMsWUFBWSxDQUFDLFNBQVMsQ0FBQztZQUNqRixNQUFNLGNBQWMsR0FBRywyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUMsWUFBWSxDQUFDLFNBQVMsQ0FBQztZQUNqRixNQUFNLFFBQVEsR0FBYSxjQUFjLENBQUMsY0FBYyxDQUFDO1lBQ3pELE1BQU0sSUFBSSxHQUFjLFFBQVEsQ0FBQyxnQkFBZ0IsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLENBQUM7WUFDakUsSUFBSSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsV0FBVyxDQUFDLEdBQUcsRUFBRTtnQkFDL0IsSUFBSSxDQUFDLEdBQUcsQ0FBQyxVQUFVLEdBQUcsSUFBSSxxQkFBTyxDQUFDLENBQUMsRUFBRSxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUM7Z0JBQzNDLG9CQUFNLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxHQUFHLEVBQUUsSUFBSSxDQUFlLENBQUM7Z0JBRWpELElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxDQUFDLFdBQVcsRUFBRSxDQUFDLENBQUM7Z0JBQ3hDLElBQUksQ0FBQyxlQUFlLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxhQUFhLENBQUMsQ0FBQztZQUN4RCxDQUFDLENBQUMsQ0FBQTtRQUNOLENBQUMsQ0FBQyxDQUFDO0lBQ1AsQ0FBQztJQUVPLENBQUMsV0FBVztRQUNoQixJQUFHLElBQUksQ0FBQyxlQUFlLEVBQUM7WUFDcEIsT0FBTSxJQUFJLEVBQUM7Z0JBQ1AsSUFBRyxJQUFJLENBQUMsZUFBZSxDQUFDLE9BQU8sRUFBQztvQkFDNUIsSUFBSSxDQUFDLGVBQWUsQ0FBQyxhQUFhLEVBQUUsQ0FBQztvQkFDckMsTUFBTTtpQkFDVDtnQkFDRCxNQUFNLElBQUksK0JBQWlCLEVBQUUsQ0FBQzthQUNqQztTQUNKO0lBQ0wsQ0FBQztDQUNKO0FBcENELHNDQW9DQyJ9","assetPath":"Assets/Main/AttachPetController.ts","manifest":{"properties":[{"assembly":"UnityEngine.CoreModule","name":"Pet","type":"UnityEngine.Transform","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.AnimationModule","name":"bodyBond","type":"UnityEngine.HumanBodyBones","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.UI","name":"_btn","type":"UnityEngine.UI.Button","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.AnimationModule","name":"animationClip","type":"UnityEngine.AnimationClip","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[{"name":"SerializeField","args":[]}]}],"name":"AttachPetController","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: a24e608458e34d9172c7a771bc86068b
+  onlyWriteTrigger: 0

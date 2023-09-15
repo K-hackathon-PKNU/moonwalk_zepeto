@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: 764adfd7952644364b9a32f113e40cfa
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_AI_1 = require(\"UnityEngine.AI\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst ZEPETO_World_1 = require(\"ZEPETO.World\");\r\nclass
+    PetController extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start()
+    {\r\n        this._navMeshAgent = this.GetComponent($typeof(UnityEngine_AI_1.NavMeshAgent));\r\n       
+    ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            this._target = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.GetPlayer(ZEPETO_World_1.WorldService.userId).character.transform;\r\n       
+    });\r\n    }\r\n    Update() {\r\n        if (this._target == null) {\r\n           
+    return;\r\n        }\r\n        this._navMeshAgent = this.GetComponent($typeof(UnityEngine_AI_1.NavMeshAgent));\r\n       
+    ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            this._target = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.GetPlayer(ZEPETO_World_1.WorldService.userId).character.transform;\r\n       
+    });\r\n        this._navMeshAgent.SetDestination(this._target.position);\r\n   
+    }\r\n}\r\nexports.default = PetController;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGV0Q29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIlBldENvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFDQSxtREFBOEM7QUFFOUMsNkVBQTJEO0FBQzNELGlEQUFxRDtBQUNyRCwrQ0FBNEM7QUFFNUMsTUFBcUIsYUFBYyxTQUFRLHFDQUFxQjtJQUs1RCxLQUFLO1FBQ0QsSUFBSSxDQUFDLGFBQWEsR0FBRyxJQUFJLENBQUMsWUFBWSxTQUFDLDZCQUFZLEVBQUcsQ0FBQztRQUV2RCwyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxrQkFBa0IsQ0FBQyxXQUFXLENBQUMsR0FBRyxFQUFFO1lBQ3ZELElBQUksQ0FBQyxPQUFPLEdBQUcsMkNBQWEsQ0FBQyxRQUFRLENBQUMsU0FBUyxDQUFDLDJCQUFZLENBQUMsTUFBTSxDQUFDLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQztRQUM3RixDQUFDLENBQUMsQ0FBQTtJQUNOLENBQUM7SUFFRCxNQUFNO1FBQ0YsSUFBSSxJQUFJLENBQUMsT0FBTyxJQUFJLElBQUksRUFBRTtZQUN0QixPQUFPO1NBQ1Y7UUFFRCxJQUFJLENBQUMsYUFBYSxHQUFHLElBQUksQ0FBQyxZQUFZLFNBQUMsNkJBQVksRUFBRyxDQUFDO1FBRXZELDJDQUFhLENBQUMsUUFBUSxDQUFDLGtCQUFrQixDQUFDLFdBQVcsQ0FBQyxHQUFHLEVBQUU7WUFDdkQsSUFBSSxDQUFDLE9BQU8sR0FBRywyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxTQUFTLENBQUMsMkJBQVksQ0FBQyxNQUFNLENBQUMsQ0FBQyxTQUFTLENBQUMsU0FBUyxDQUFDO1FBQzdGLENBQUMsQ0FBQyxDQUFBO1FBRUYsSUFBSSxDQUFDLGFBQWEsQ0FBQyxjQUFjLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxRQUFRLENBQUMsQ0FBQztJQUM3RCxDQUFDO0NBQ0o7QUExQkQsZ0NBMEJDIn0=","assetPath":"Assets/Main/PetController.ts","manifest":{"properties":[],"name":"PetController","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 8fc974624238be343b66f9af0f78eb84
+  onlyWriteTrigger: 0
